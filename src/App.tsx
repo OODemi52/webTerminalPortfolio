@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import Terminal from './components/Terminal'
 
-function App() {
+function App(): React.ReactNode {
 
   return (
     <>
