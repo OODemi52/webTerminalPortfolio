@@ -1,0 +1,35 @@
+.terminal-prompt {
+    display: flex;
+    align-items: baseline;
+  }
+  
+  .blinking-caret {
+    display: inline-block;
+    width: 8px; /* Adjust the width of the caret */
+    height: 14px; /* Adjust the height of the caret */
+    background-color: #ab4eda; /* Set the background color of the caret */
+    margin-left: 1px; /* Adjust the spacing between the caret and the text */
+    color: #fff;
+    text-align: center;
+    animation: blink 0.75s infinite; /* Add a blink animation to the visible caret */
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  input {
+    appearance: transparent;
+    border: none;
+    outline: none;
+    caret-color: transparent;
+    color: transparent;
+    background: transparent;
+    user-select: none;
+  }
+
+  input::selection {
+    background-color: transparent;
+  }

@@ -1,0 +1,53 @@
+:root {
+  font-family: 'Menlo', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #ab4eda;
+  background-color: #2b2031;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.prompt {
+  color: #705d97;
+}
+
+.command {
+  color: #fff;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.message {
+  color: #A4ADD3;
+}
+
+.info {
+  color: #ab4eda;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 1px #ab4eda, 0 0 2px #ab4eda, 0 0 3px #ab4eda, 0 0 4px #ab4eda, 0 0 5px #ab4eda, 0 0 6px #ab4eda, 0 0 7px #ab4eda;
+  }
+  to {
+    text-shadow: 0 0 3px #ab4eda, 0 0 4px #ab4eda, 0 0 5px #ab4eda, 0 0 6px #ab4eda, 0 0 7px #ab4eda, 0 0 8px #ab4eda, 0 0 9px #ab4eda;
+  }
+}

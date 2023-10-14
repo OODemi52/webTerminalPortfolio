@@ -1,0 +1,22 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.container{
+  display: inline-block;
+}
+
+.typed-out{
+  overflow: hidden;
+  border-right: .15em solid #ab4eda;
+  white-space: nowrap;
+  animation: 
+    typing 5s forwards;
+  width: 0;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
