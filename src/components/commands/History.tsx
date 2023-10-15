@@ -6,7 +6,7 @@ const History: React.FC<{ historyArray: string[] }> = ({historyArray}) => {
         <div>
           <ul>
             {historyArray.map((historyItem, index) => (
-              <li className='command' key={index}>{historyItem}</li>
+              <li className='command' key={index}>{historyItem.toLowerCase()}</li>
             ))}
           </ul>
         </div>

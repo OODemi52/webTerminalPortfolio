@@ -1,17 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-import CommandRouter from './CommandRouter';
 import './styles/TerminalPrompt.css';
 
-const TerminalPrompt: React.FC = () => {
+interface TerminalPromptProps {
+  onEnterPress: (command: string) => void;
+}
+
+const TerminalPrompt: React.FC<TerminalPromptProps> = ({ onEnterPress }) => {
   const [inputText, setInputText] = useState('');
-  const [inputWidth, setInputWidth] = useState(0); // New state for input width
-  const [command, setCommand] = useState<string>('');
-  const [historyArray, setHistoryArray] = useState<string[]>([])
-  const inputRef = useRef<HTMLInputElement>(null); // Ref to input element
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [inputWidth, setInputWidth] = useState(0);
+  const inputRef = useRef<HTMLInputElement>(null);
 
-
-  // Focus input eleement when component is mounted
   useEffect(() => {
     if (inputRef.current) {
       inputRef.current.focus();
@@ -19,47 +17,25 @@ const TerminalPrompt: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    document.addEventListener("click", handleDivClick);
-    return () => {
-      document.removeEventListener("click", handleDivClick);
-    };
-  }, []);
-
-  // Update the input width when inputText changes
-  useEffect(() => {
     if (inputRef.current) {
       setInputWidth(inputRef.current.scrollWidth);
     }
   }, [inputText]);
 
-  // focus on input when terminal is clicked
-  const handleDivClick = () => {
-    inputRef.current && inputRef.current.focus();
-  };
-
-  // Handle when user starts typing
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(event.target.value);
   };
 
-  // Handle when Enter key is pressed
   const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
-        setCommand(inputText);
+      onEnterPress(inputText);
       setInputText('');
     }
   };
 
-  useEffect(() => {
-    if (command) {
-      // Update the historyArray when a command is entered
-      setHistoryArray(prevHistory => [...prevHistory, `${command}`]);
-    }
-  }, [command]);
-
   return (
     <>
-      <div className="terminal-prompt" ref={containerRef}>
+      <div className="terminal-prompt">
         <span className="width-machine">(web) visitor@terminal.demidaniel.online ~ % <span className="command">{inputText}</span><span className="blinking-caret"></span></span>
         <input
           autoComplete="off"
@@ -70,10 +46,9 @@ const TerminalPrompt: React.FC = () => {
           value={inputText}
           onChange={handleInputChange}
           onKeyDown={handleKeyPress}
-          style={{ width: inputWidth }} // Set the width dynamically
+          style={{ width: inputWidth }}
         />
       </div>
-      <CommandRouter command={command} historyArray={historyArray}/>
     </>
   );
 };
