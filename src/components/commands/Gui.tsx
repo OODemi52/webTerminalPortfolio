@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Gui = () => {
+const Gui:React.FC = () => {
   return (
     <p>Under Construction! Comming Soon ;)</p>
   )

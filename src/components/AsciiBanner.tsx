@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-const AsciiBanner = () => {
+const AsciiBanner:React.FC = () => {
 
 
   return (<>
