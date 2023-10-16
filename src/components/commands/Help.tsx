@@ -8,7 +8,7 @@ const Help: React.FC = () => {
     education: 'View my education',
     projects: 'View coding projects',
     resume: 'View my resume (pdf)',
-    social: 'Display social networks',
+    socials: 'Display social networks',
     contact: 'Feel free to shoot me an email!',
     history: 'View command history',
     help: 'List all commands',

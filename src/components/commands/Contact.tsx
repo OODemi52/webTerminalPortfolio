@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useEffect } from "react"
 
-const Contact = () => {
+const Contact: React.FC = () => {
+
+  // Open mail app when component is mounted.
+  useEffect(() => {
+    const email = 'demidaniel98@gmail.com';
+    const mailtoURL = `mailto:${email}`;
+    window.location.href = mailtoURL;
+  }, [])
+
   return (
-    <div>Contact</div>
+    <>
+      Opening mail app...
+    </>
   )
 }
 

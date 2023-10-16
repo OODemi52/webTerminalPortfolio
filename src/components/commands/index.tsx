@@ -6,13 +6,12 @@ import Whois from "./Whois";
 import Education from "./Education";
 import Projects from "./Projects";
 import Resume from "./Resume";
-import Social from "./Social";
+import Socials from "./Socials";
 import Contact from "./Contact";
 import History from "./History";
 import Help from "./Help";
-import Clear from "./Clear";
 import Banner from "./Banner";
 import Gui from "./Gui";
 import NotFound from "./NotFound";
 
-export {Whoami, Whois, Education, Projects, Resume, Social, Contact, History, Help, Clear, Banner, Gui, NotFound}
+export {Whoami, Whois, Education, Projects, Resume, Socials, Contact, History, Help, Banner, Gui, NotFound}

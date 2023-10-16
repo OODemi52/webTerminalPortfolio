@@ -3,18 +3,20 @@ import TerminalPrompt from './TerminalPrompt';
 import CommandRouter from './CommandRouter';
 
 const Terminal: React.FC = () => {
-  const [prompts, setPrompts] = useState<{ command: string; output: React.ReactNode }[]>([]);
-  const [currentCommand, setCurrentCommand] = useState<string | null>(null);
+  const [promptHistory, setPromptHistory] = useState<{ command: string; output: React.ReactNode }[]>([]);
 
   const handleEnterPress = (command: string) => {
-    const output = <CommandRouter command={command} historyArray={prompts.map(p => p.command)} />;
-    setPrompts(prevPrompts => [...prevPrompts, { command, output }]);
-    setCurrentCommand(command);
+    if (command.toLowerCase() === 'clear') {
+      setPromptHistory([])
+    } else {
+    const output = <CommandRouter command={command} historyArray={promptHistory.map(p => p.command)} />;
+    setPromptHistory(prevPromptHistory => [...prevPromptHistory, { command, output }]);
+    }
   };
 
   return (
     <>
-      {prompts.map((prompt, index) => (
+      {promptHistory.map((prompt, index) => (
         <div key={index}>
           {`(web) visitor@terminal.demidaniel.online ~ % ${prompt.command}`}
           <br />

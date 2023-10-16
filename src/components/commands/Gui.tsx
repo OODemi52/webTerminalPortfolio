@@ -2,7 +2,7 @@ import React from 'react'
 
 const Gui = () => {
   return (
-    <div>Gui</div>
+    <p>Under Construction! Comming Soon ;)</p>
   )
 }
 
