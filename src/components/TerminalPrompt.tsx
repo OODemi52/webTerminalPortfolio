@@ -36,7 +36,7 @@ const TerminalPrompt: React.FC<TerminalPromptProps> = ({ onEnterPress }) => {
   return (
     <>
       <div className="terminal-prompt">
-        <span className="width-machine">(web) visitor@terminal.demidaniel.online ~ % <span className="command">{inputText}</span><span className="blinking-caret"></span></span>
+        <span className="width-machine prompt">(web) visitor@terminal.demidaniel.online ~ % <span className="command">{inputText}</span><span className="blinking-caret"></span></span>
         <input
           autoComplete="off"
           spellCheck="false"

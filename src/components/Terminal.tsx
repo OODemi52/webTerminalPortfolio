@@ -18,7 +18,7 @@ const Terminal: React.FC = () => {
     <>
       {promptHistory.map((prompt, index) => (
         <div key={index}>
-          {`(web) visitor@terminal.demidaniel.online ~ % ${prompt.command}`}
+          <span className='prompt'>{`(web) visitor@terminal.demidaniel.online ~ %`}<span>{prompt.command}</span></span>
           <br />
           {prompt.output}
         </div>

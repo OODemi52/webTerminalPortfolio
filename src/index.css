@@ -2,6 +2,7 @@
   font-family: 'Menlo', sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  font-size: 20px;
 
   color-scheme: light dark;
   color: #ab4eda;
@@ -22,7 +23,7 @@ body {
 }
 
 .prompt {
-  color: #705d97;
+  color: #fc8a68;
 }
 
 .command {
@@ -33,7 +34,7 @@ body {
 }
 
 .message {
-  color: #A4ADD3;
+  color: #ffddfd;
 }
 
 .info {
@@ -43,11 +44,11 @@ body {
   padding: 0;
 }
 
-@-webkit-keyframes glow {
+@keyframes glow {
   from {
-    text-shadow: 0 0 1px #ab4eda, 0 0 2px #ab4eda, 0 0 3px #ab4eda, 0 0 4px #ab4eda, 0 0 5px #ab4eda, 0 0 6px #ab4eda, 0 0 7px #ab4eda;
+    text-shadow: 0 0 1px #fc8a68, 0 0 2px #fc8a68, 0 0 7px #fc8a68;
   }
   to {
-    text-shadow: 0 0 3px #ab4eda, 0 0 4px #ab4eda, 0 0 5px #ab4eda, 0 0 6px #ab4eda, 0 0 7px #ab4eda, 0 0 8px #ab4eda, 0 0 9px #ab4eda;
+    text-shadow: 0 0 3px #fc8a68, 0 0 4px #fc8a68, 0 0 9px #fc8a68;
   }
 }

@@ -1,19 +1,12 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-}
-
-.container{
-  display: inline-block;
+  padding: 1rem;
 }
 
 .typed-out{
-  overflow: hidden;
-  border-right: .15em solid #ab4eda;
-  white-space: nowrap;
+  white-space: wrap;
   animation: 
-    typing 5s forwards;
+    typing 0s forwards; /*Changed to 0s to disable for time being*/
   width: 0;
 }
 @keyframes typing {
