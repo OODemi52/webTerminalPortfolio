@@ -2,7 +2,6 @@
   font-family: 'Menlo', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  font-size: 20px;
 
   color-scheme: light dark;
   color: #ab4eda;
@@ -20,6 +19,7 @@ body {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+  font-size: 20px;
 }
 
 .prompt {

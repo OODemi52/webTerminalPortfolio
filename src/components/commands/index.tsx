@@ -14,4 +14,17 @@ import Banner from "./Banner";
 import Gui from "./Gui";
 import NotFound from "./NotFound";
 
-export {Whoami, Whois, Education, Projects, Resume, Socials, Contact, History, Help, Banner, Gui, NotFound}
+export {
+  Whoami,
+  Whois,
+  Education,
+  Projects,
+  Resume,
+  Socials,
+  Contact,
+  History,
+  Help,
+  Banner,
+  Gui,
+  NotFound,
+};
