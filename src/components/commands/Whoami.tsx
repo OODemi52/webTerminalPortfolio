@@ -4,7 +4,7 @@ const Whoami: React.FC = () => {
   return (
     <>
       <div>
-        <p>visitor (hopefully an impressed visitor👀)</p>
+        <p>visitor</p>
       </div>
     </>
   );
