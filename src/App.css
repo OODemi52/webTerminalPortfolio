@@ -1,15 +1,6 @@
 #root {
-  margin: 0;
-  padding: 1rem;
-}
-
-.typed-out{
-  white-space: wrap;
-  animation: 
-    typing 0s forwards; /*Changed to 0s to disable for time being*/
-  width: 0;
-}
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }

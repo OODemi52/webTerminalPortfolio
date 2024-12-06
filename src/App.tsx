@@ -1,117 +1,48 @@
-import React from "react";
-import "./App.css";
-import Terminal from "./components/Terminal";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./App.css";
+import { useState, useEffect, useMemo } from "react";
+import { motion } from "framer-motion";
+import { Suspense } from "react";
+import Envelope from "./components/Envelope";
+import LoadingSpinner from "./components/LoadingSpinner";
+import DetailsDrawer from "./components/DetailsDrawer";
 
+const App: React.FC = () => {
+  const [areComponentsLoaded, setAreComponentsLoaded] = useState(false);
+  const [allAnimationsComplete, setAllAnimationsComplete] = useState(false);
 
-const Will = () => {
-    return (
-        <div className="App">
-            <header className="William Yi">
-                <h1>Will</h1>
-            </header>
-        </div>
-    );
-}
+  useEffect(() => {
+    setTimeout(() => setAreComponentsLoaded(true), 1000);
+  }, []);
 
-const Abdul = () => {
-    return (
-        <div className="App">
-            <header className="William Yi">
-                <h1>Abdul</h1>
-            </header>
-        </div>
-    );
-}
+  const animate = useMemo(() => (
+    allAnimationsComplete ? { x: -350 } : { x: 0 }
+  ), [allAnimationsComplete]);
 
-const Chris = () => {
-    return (
-        <div className="App">
-            <header className="William Yi">
-                <h1>Chris</h1>
-            </header>
-        </div>
-    );
-}
+  const transition = useMemo(() => (
+    { duration: 1 }
+  ), []);
 
-const Temi = () => {
-    return (
-        <div className="App">
-            <header className="William Yi">
-                <h1>Temi</h1>
-            </header>
-        </div>
-    );
-}
+  const style = useMemo(() => (
+    { display: "inline-block" }
+  ), []);
 
-const Nimi = () => {
-    return (
-        <div className="App">
-            <header className="William Yi">
-                <h1>Nimi</h1>
-            </header>
-        </div>
-    );
-}
-
-const Peniel = () => {
-    return (
-        <div className="App">
-            <header className="William Yi">
-                <h1>Peniel</h1>
-            </header>
-        </div>
-    );
-}
-
-const David = () => {
-    return (
-        <div className="App">
-            <header className="William Yi">
-                <h1>David</h1>
-            </header>
-        </div>
-    );
-}
-
-const Jr = () => {
-    return (
-        <div className="App">
-            <header className="William Yi">
-                <h1>Thomas</h1>
-            </header>
-        </div>
-    );
-}
-
-const Nissi = () => {
-    return (
-        <div className="App">
-            <header className="William Yi">
-                <h1>Nissi</h1>
-            </header>
-        </div>
-    );
-}
-
-function App(): React.ReactNode {
-    return (
-        <Router>
-            <Routes>
-                <Route path="/will" element={<Will />} />
-                <Route path="/abdul" element={<Abdul />} />
-                <Route path="/chris" element={<Chris />} />
-                <Route path="/temi" element={<Temi />} />
-                <Route path="/nimi" element={<Nimi />} />
-                <Route path="/peniel" element={<Peniel />} />
-                <Route path="/david" element={<David />} />
-                <Route path="/jr" element={<Jr />} />
-                <Route path="/nissi" element={<Nissi />} />
-                <Route path="/" element={<Terminal />} />
-            </Routes>
-        </Router>
-    );
-}
+  return (
+      <Suspense fallback={<LoadingSpinner />}>
+        {areComponentsLoaded ? (
+          <div style={{ position: "relative", width: "100%", height: "100%" }}>
+            <motion.div
+              animate={animate}
+              transition={transition}
+              style={style}
+            >
+              <Envelope setAllAnimationsComplete={setAllAnimationsComplete} />
+            </motion.div>
+            <DetailsDrawer allAnimationsComplete={allAnimationsComplete} />
+          </div>
+        ) : (
+          <LoadingSpinner />
+        )}
+      </Suspense>
+  );
+};
 
 export default App;

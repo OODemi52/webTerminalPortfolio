@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1366" height="768"><svg id="SvgjsSvg1105" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1366 768">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#radial-gradient);
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: url(#radial-gradient-2);
+      }
+    </style>
+    <radialGradient id="SvgjsRadialGradient1104" cx="514.6" cy="403.22" fx="514.6" fy="403.22" r="247.38" gradientTransform="translate(-167.14 -192.17) scale(1.34 1.41)" gradientUnits="userSpaceOnUse">
+      <stop offset=".16" stop-color="#181818"></stop>
+      <stop offset=".52" stop-color="#181818"></stop>
+      <stop offset=".81" stop-color="#161616"></stop>
+      <stop offset=".91" stop-color="#0f0f0f"></stop>
+      <stop offset=".98" stop-color="#030303"></stop>
+      <stop offset="1" stop-color="#000"></stop>
+    </radialGradient>
+    <radialGradient id="SvgjsRadialGradient1103" cx="813.21" cy="403.06" fx="813.21" fy="403.06" r="220.21" gradientTransform="translate(-382.82 -251.47) scale(1.5 1.56)" gradientUnits="userSpaceOnUse">
+      <stop offset=".62" stop-color="#fff" stop-opacity="0"></stop>
+      <stop offset=".68" stop-color="#fff" stop-opacity="0"></stop>
+      <stop offset=".71" stop-color="#fff" stop-opacity=".04"></stop>
+      <stop offset=".74" stop-color="#fff" stop-opacity=".1"></stop>
+      <stop offset=".76" stop-color="#fff" stop-opacity=".18"></stop>
+      <stop offset=".78" stop-color="#fff" stop-opacity=".28"></stop>
+      <stop offset=".8" stop-color="#fff" stop-opacity=".4"></stop>
+      <stop offset=".81" stop-color="#fff" stop-opacity=".5"></stop>
+      <stop offset=".82" stop-color="#dbc01f"></stop>
+      <stop offset=".84" stop-color="#f5e13f"></stop>
+      <stop offset=".9" stop-color="#dbc01f"></stop>
+      <stop offset=".93" stop-color="#e4cc2a"></stop>
+      <stop offset=".97" stop-color="#f1dc3a"></stop>
+      <stop offset="1" stop-color="#f5e13f"></stop>
+    </radialGradient>
+  </defs>
+  <ellipse class="cls-1" cx="524.79" cy="377.61" rx="332.79" ry="349.39"></ellipse>
+  <ellipse class="cls-2" cx="840.21" cy="377.39" rx="332.79" ry="349.39"></ellipse>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>
