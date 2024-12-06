@@ -5,9 +5,10 @@ import EnvelopeFront from "./EnvelopeFront";
 
 interface EnvelopeProps {
     setAllAnimationsComplete: React.Dispatch<React.SetStateAction<boolean>>;
+    imageSet: string;
 }
 
-const Envelope: React.FC<EnvelopeProps> = memo(({ setAllAnimationsComplete }) => {
+const Envelope: React.FC<EnvelopeProps> = memo(({ setAllAnimationsComplete, imageSet }) => {
     const [showFront, setShowFront] = useState(false);
     const [isFirstHalfRotationComplete, setIsFirstHalfRotationComplete] = useState(false);
   
@@ -19,11 +20,11 @@ const Envelope: React.FC<EnvelopeProps> = memo(({ setAllAnimationsComplete }) =>
     const animatedPresenceMemo = useMemo(() => (
       <AnimatePresence>
         {isFirstHalfRotationComplete
-          ? <EnvelopeFront isVisible={showFront} setAllAnimationsComplete={setAllAnimationsComplete} />
-          : <EnvelopeBack onRotationComplete={handleRotationComplete} setAllAnimationsComplete={setAllAnimationsComplete} />
+          ? <EnvelopeFront isVisible={showFront} setAllAnimationsComplete={setAllAnimationsComplete} imageSet={imageSet} />
+          : <EnvelopeBack onRotationComplete={handleRotationComplete} setAllAnimationsComplete={setAllAnimationsComplete} imageSet={imageSet} />
         }
       </AnimatePresence>
-    ), [isFirstHalfRotationComplete, showFront, setAllAnimationsComplete, handleRotationComplete]);
+    ), [isFirstHalfRotationComplete, showFront, setAllAnimationsComplete, handleRotationComplete, imageSet]);
 
     const motionDivStyle = useMemo(() => ({
       position: "relative",

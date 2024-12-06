@@ -1,20 +1,45 @@
+import React, { useMemo, memo } from "react";
 import { motion } from "framer-motion";
-import envelopeFlapOut from "../../public/both_images/envelope_flap_out.png";
-import envelopeFlapIn from "../../public/both_images/envelope_flap_in.png";
-
 interface EnvelopeFlapProps {
     flapHalfFlipped: boolean;
     setFlapHalfFlipped: (flapHalfFlipped: boolean) => void;
     setFlapFullyFlipped: (flapFullyFlipped: boolean) => void;
+    imageSet: string;
 }
 
-import React, { useMemo } from "react";
+const EnvelopeFlap: React.FC<EnvelopeFlapProps> = memo(({ flapHalfFlipped, setFlapHalfFlipped, setFlapFullyFlipped, imageSet }) => {
 
-const EnvelopeFlap: React.FC<EnvelopeFlapProps> = ({ flapHalfFlipped, setFlapHalfFlipped, setFlapFullyFlipped }) => {
+    const envelopeFlapOut = useMemo(() => {
+        switch (imageSet) {
+            case "both":
+                return "/envelope_images/both/envelope_flap_out.png";
+            case "trad":
+                return "/envelope_images/trad/envelope_flap_out.png";
+            case "white":
+                return "/envelope_images/white/envelope_flap_out.png";
+            default:
+                return "";
+        }
+    }, [imageSet]);
+
+    const envelopeFlapIn = useMemo(() => {
+        switch (imageSet) {
+            case "both":
+                return "/envelope_images/both/envelope_flap_in.png";
+            case "trad":
+                return "/envelope_images/trad/envelope_flap_in.png";
+            case "white":
+                return "/envelope_images/white/envelope_flap_in.png";
+            default:
+                return "";
+        }
+    }, [imageSet]);
+
     const style = useMemo(() => ({
         position: 'absolute',
         width: "840px",
         height: "549px",
+        top: "0",
         backfaceVisibility: 'hidden',
         zIndex: 10,
         transformOrigin: 'top',
@@ -41,16 +66,8 @@ const EnvelopeFlap: React.FC<EnvelopeFlapProps> = ({ flapHalfFlipped, setFlapHal
             transition={transition}
             onAnimationComplete={() => flapHalfFlipped ? setFlapFullyFlipped(true) : setFlapHalfFlipped(true)}
         />
-    ), [
-        flapHalfFlipped,
-        style,
-        initial,
-        animate,
-        transition,
-        setFlapFullyFlipped,
-        setFlapHalfFlipped
-    ]);
-};
+    ), [flapHalfFlipped, envelopeFlapIn, envelopeFlapOut, style, initial, animate, transition, setFlapFullyFlipped, setFlapHalfFlipped]);
+});
 
 export default EnvelopeFlap;
   

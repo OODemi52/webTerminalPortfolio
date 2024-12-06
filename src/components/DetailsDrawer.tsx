@@ -1,8 +1,6 @@
+import React, { useMemo, memo, useState, useCallback } from 'react';
 import { motion } from "framer-motion";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { FaCalendarAlt } from "react-icons/fa";
-import React, { useMemo, memo } from 'react';
-import { useState, useCallback } from 'react';
+import { FaMapMarkerAlt, FaCalendarAlt  } from "react-icons/fa";
 
 interface DetailsDrawerProps {
     allAnimationsComplete: boolean;
@@ -49,6 +47,7 @@ const DetailsDrawer: React.FC<DetailsDrawerProps> = memo(({ allAnimationsComplet
         height: "100%",
         backgroundColor: "#fff",
         zIndex: 10,
+        borderLeft: "1px solid #ccc",
     }), []);
 
     const innerDivStyle = useMemo(() => ({

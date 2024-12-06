@@ -1,14 +1,29 @@
-import { useState, useCallback, useMemo } from "react";
+import { memo, useState, useCallback, useMemo } from "react";
 import { motion } from "framer-motion";
-import lowResCard from "../../public/both_images/card1.png";
 
 interface MessageCardProps {
     flapFullyFlipped: boolean;
     setMessageCardAnimationComplete: (messageCardAnimationComplete: boolean) => void;
+    imageSet: string;
 }
 
-const MessageCard: React.FC<MessageCardProps> = ({ flapFullyFlipped, setMessageCardAnimationComplete }) => {
+const MessageCard: React.FC<MessageCardProps> = memo(({ flapFullyFlipped, setMessageCardAnimationComplete, imageSet }) => {
   const [slideBackDown, setSlideBackDown] = useState(false);
+
+  const lowResCard = useMemo(() => {
+    switch (imageSet) {
+      case "both":
+        return "/envelope_images/both/message_card.png";
+      case "trad":
+        return "/envelope_images/trad/message_card.png";
+      case "white":
+        return "/envelope_images/white/message_card.png";
+      default:
+        return "";
+    }
+  }, [imageSet]);
+
+  console.log(lowResCard);
 
   const style = useMemo(() => ({
     position: "absolute",
@@ -60,9 +75,9 @@ const MessageCard: React.FC<MessageCardProps> = ({ flapFullyFlipped, setMessageC
       transition={transition}
       onAnimationComplete={onAnimationComplete}
     />
-  ), [style, initial, animate, transition, onAnimationComplete]);
+  ), [style, initial, animate, transition, onAnimationComplete, lowResCard]);
 
   return memoizedMotionImg;
-}
+});
 
 export default MessageCard;
